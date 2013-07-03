@@ -111,6 +111,22 @@ int main(){
   }
   std::cout<< std::endl;
 
+  // linear time way to remove the element from vector
+  //"remove erase  ideom"
+  // dont use erase(). vector shift all the element. total runtime  O(n^2)
+  // use std::remove()
+  v.erase(remove_if(v.begin(),v.end(),
+					[](int e){
+					  return (e%2 == 1);
+						     })
+           ,v.end()
+		  );
+	
+  for(auto i = v.begin(); i != v.end(); ++i){ // need --std=c++0x in cmd line  while compiling.
+  	std::cout<< *i  << " ";
+  }
+  std::cout<< std::endl;
+
 
 
 }
