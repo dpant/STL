@@ -21,7 +21,8 @@ using namespace std;
 #include <functional>
 
 #if TEST1
-/*	 Associative Container: (maintains the key value pair key==> value) --  ordered containers store element in sorted order of key 
+/*	 
+     Associative Container: (maintains the key value pair key==> value) --  ordered containers store element in sorted order of key 
 		map  - only contains unique keys. have a [] defined
 		multimap - same key can be associated with many value (k,v1) (k,v2). Does not have [] defined. use member function find.
 		set - do not have [] . element are automatically sorted.
@@ -42,7 +43,7 @@ void foo(const map<int,string> & m){ // m[] will not work
 }
 
 void bar(map<int,string> & m){
-  cout << m[4] <<endl; // this will error out 
+  cout << m[4] <<endl; // this is OK see how the argment is passed (no const)
 }
 int main(){
 
